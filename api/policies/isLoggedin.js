@@ -5,11 +5,13 @@ module.exports = async (req, res, next) => {
 
     const tokenParam = req.headers.authorization;
     const tokenValid = JWTservice.verify(tokenParam);
+    const user = await Registration.findOne({
+        id: tokenValid.id
+    });
 
-
-    if(!tokenValid)
+    if(!user)
     return res.badRequest({message: 'Unauthorized', success: false});
 
-    res.userId = tokenValid.id;
+    res.userId = user.id;
     next();
 }

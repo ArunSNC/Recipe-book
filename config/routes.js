@@ -16,7 +16,7 @@ module.exports.routes = {
     'POST /api/user/login'    : 'user/login',
 
     //Testing
-    // 'GET /api/test' : 'test/test'
+    'GET /api/test' : 'test/test'
 
 
 };

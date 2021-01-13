@@ -20,11 +20,11 @@ module.exports.policies = {
 
   // '*': true,
 
-  // test: {
-  //   '*' : 'isLoggedin'
-  // },
+  test: {
+    '*' : 'isLoggedin'
+  },
   user: {
-    '*' : true
+    '*' : 'isLoggedin'
   }
 
 };
