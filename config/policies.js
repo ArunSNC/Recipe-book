@@ -24,7 +24,10 @@ module.exports.policies = {
     '*' : 'isLoggedin'
   },
   user: {
-    '*' : 'isLoggedin'
+    '*' : true,
+  },
+  recipes: {
+    '*': 'isLoggedin'
   }
 
 };

@@ -16,7 +16,15 @@ module.exports.routes = {
     'POST /api/user/login'    : 'user/login',
 
     //Testing
-    'GET /api/test' : 'test/test'
+    'GET /api/test' : 'test/test',
+
+
+    //Recipes
+    'POST /api/add/recipes' : 'recipes/store-recipes',
+    'GET /api/recipe'  : 'recipes/read-recipes',     // Get By id : /api/recipe?id=<id>
+    'GET /api/recipes'  : 'recipes/read-all-recipes',
+    'PATCH /api/recipe' : 'recipes/update-recipe',  // Get By id : /api/recipe?id=<id>
+    'DELETE /api/recipe': 'recipes/delete-recipe'   // Get By id : /api/recipe?id=<id>
 
 
 };

@@ -12,6 +12,7 @@ module.exports = async (req, res, next) => {
     if(!user)
     return res.badRequest({message: 'Unauthorized', success: false});
 
-    res.userId = user.id;
+    req.user = user.id;
+
     next();
 }
