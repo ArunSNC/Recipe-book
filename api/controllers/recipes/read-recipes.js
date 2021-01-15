@@ -32,13 +32,13 @@ module.exports = {
   fn: async function (inputs, exits, env) {
 
     try {
-      const recipe = await Recipes.findOne({ id: inputs.id });
+      const recipe = await Recipes.findOne({ id: inputs.id }).populate('ingredientsId');
 
       if(!recipe) return exits.invalid({message: 'Not Found', success: false});
 
       return exits.success({message: 'Recipe Found',recipe, success: true});
     } catch (error) {
-      
+
       return exits.invalid({message: 'Not Found', success: false});
     }
   }

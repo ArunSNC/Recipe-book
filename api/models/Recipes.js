@@ -15,7 +15,12 @@ module.exports = {
 
     description: { type: 'string', required:true },
 
-    userId: { type: 'string', required: true}
+    userId: { model:'Login', columnName:'userID', required: true},
+
+    ingredientsId: {
+      model: 'Ingredients',
+      columnName: 'ingredientsId'
+    }
 
 
   },

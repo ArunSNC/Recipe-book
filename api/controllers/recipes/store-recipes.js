@@ -51,12 +51,14 @@ module.exports = {
 
       const userId = env.req.user;
 
-      const storedRecipes = await sails.helpers.modelCreate(Recipes,{recipeName, imagePath, description,userId})
+      let storedRecipes = await sails.helpers.modelCreate(Recipes,{recipeName, imagePath, description,userId})
 
       const storedIngredients = await sails.helpers.modelCreate(Ingredients,{ingredientsName: ingredients,recipeId: storedRecipes.id,
         userId});
 
-      if(!storedIngredients) return exits.invalid({message:'Recipe not saved', statusCode: 401, success: false});
+      storedRecipes = await Recipes.update({ id: storedRecipes.id},{ ingredientsId: storedIngredients.id }).fetch();
+
+      if(!storedRecipes) return exits.invalid({message:'Recipe not saved', statusCode: 401, success: false});
 
       return exits.success({message: 'Recipes saved!', storedRecipes, storedIngredients, success: true});
     } catch (error) {
