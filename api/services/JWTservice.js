@@ -9,5 +9,9 @@ module.exports = {
 
     verify: (token) => {
         return jwt.verify(token, SECRET);
+    },
+
+    decode: (token) => {
+        return jwt.decode(token);
     }
 }
