@@ -49,14 +49,14 @@ module.exports = {
     try {
       const { name, imagePath, description, ingredients } = inputs;
 
-      // const userId = env.req.user;
+      const userId = env.req.user;
 
       let storedRecipes = await sails.helpers.modelCreate(Recipes,{name, imagePath, description,
-        // userId
+        userId
       })
 
       const storedIngredients = await sails.helpers.modelCreate(Ingredients,{ingredientsName: ingredients,recipeId: storedRecipes.id,
-        // userId
+        userId
       });
 
       storedRecipes = await Recipes.update({ id: storedRecipes.id},{ ingredientsId: storedIngredients.id }).fetch();

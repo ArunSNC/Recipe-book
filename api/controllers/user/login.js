@@ -64,6 +64,14 @@ module.exports = {
 
     const token = JWTservice.sign({id: loggedUser.userId}, '1 days');
 
-    return exits.success({message: "successfully Loggedin..", token ,success: true});
+    const decoded = JWTservice.decode(token);
+
+    return exits.success({
+      message: "successfully Loggedin..",
+       token ,
+       id : decoded.id,
+       iat: decoded.iat,
+       exp: decoded.exp,
+       success: true});
   }
 };
