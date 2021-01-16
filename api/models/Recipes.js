@@ -9,13 +9,13 @@ module.exports = {
 
   attributes: {
 
-    recipeName: { type: 'string' , required: true},
+    name: { type: 'string' , required: true},
 
     imagePath: { type: 'string' , required: true, isURL: true},
 
     description: { type: 'string', required:true },
 
-    userId: { model:'Login', columnName:'userID', required: true},
+    // userId: { model:'Login', columnName:'userID', required: true},
 
     ingredientsId: {
       model: 'Ingredients',

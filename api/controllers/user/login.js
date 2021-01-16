@@ -64,6 +64,6 @@ module.exports = {
 
     const token = JWTservice.sign({id: loggedUser.userId}, '1 days');
 
-    return exits.success({message: `Logged in at : ${Date.now()}`, token ,success: true});
+    return exits.success({message: "successfully Loggedin..", token ,success: true});
   }
 };

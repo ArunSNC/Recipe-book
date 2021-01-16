@@ -25,7 +25,7 @@ module.exports = {
   fn: async function (inputs,exits) {
 
     try {
-      const recipes = await Recipes.find();
+      const recipes = await Recipes.find().populate('ingredientsId');
       return exits.success({message: 'Recipes Found',recipes, success: true});
     } catch (error) {
       return exits.invalid({message: 'Not Found', success: false});

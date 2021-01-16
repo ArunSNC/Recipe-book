@@ -19,11 +19,11 @@ module.exports = {
       required: true
     },
 
-    userId: {
-      model: 'Recipes',
-      columnName: 'userId',
-      required: true
-    }
+    // userId: {
+    //   model: 'Recipes',
+    //   columnName: 'userId',
+    //   required: true
+    // }
 
 
   },

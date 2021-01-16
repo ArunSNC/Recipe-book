@@ -20,14 +20,14 @@ module.exports.policies = {
 
   // '*': true,
 
-  test: {
-    '*' : 'isLoggedin'
-  },
-  user: {
-    '*' : true,
-  },
-  recipes: {
-    '*': 'isLoggedin'
-  }
+  // test: {
+  //   '*' : 'isLoggedin'
+  // },
+  // user: {
+  //   '*' : true,
+  // },
+  // recipes: {
+  //   '*': 'isLoggedin'
+  // }
 
 };

@@ -9,7 +9,7 @@ module.exports = {
 
   inputs: {
 
-    recipeName: {
+    name: {
       type: 'string',
       required: true
     },
@@ -47,14 +47,17 @@ module.exports = {
   fn: async (inputs, exits, env) => {
 
     try {
-      const { recipeName, imagePath, description, ingredients } = inputs;
+      const { name, imagePath, description, ingredients } = inputs;
 
-      const userId = env.req.user;
+      // const userId = env.req.user;
 
-      let storedRecipes = await sails.helpers.modelCreate(Recipes,{recipeName, imagePath, description,userId})
+      let storedRecipes = await sails.helpers.modelCreate(Recipes,{name, imagePath, description,
+        // userId
+      })
 
       const storedIngredients = await sails.helpers.modelCreate(Ingredients,{ingredientsName: ingredients,recipeId: storedRecipes.id,
-        userId});
+        // userId
+      });
 
       storedRecipes = await Recipes.update({ id: storedRecipes.id},{ ingredientsId: storedIngredients.id }).fetch();
 
