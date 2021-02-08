@@ -7,7 +7,7 @@
   "dependencies": {
     "@sailshq/lodash": "^3.10.3",
     "bcrypt": "^5.0.0",
-    "joi": "^17.3.0",
+    "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "sails": "^1.4.0",
     "sails-hook-orm": "^3.0.1",
