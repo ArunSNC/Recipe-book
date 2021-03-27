@@ -11,7 +11,7 @@
     "jsonwebtoken": "^8.5.1",
     "sails": "^1.4.0",
     "sails-hook-orm": "^3.0.1",
-    "sails-hook-sockets": "^2.0.0",
+    "sails-hook-sockets": "^2.0.1",
     "sails-mongo": "^1.2.0"
   },
   "devDependencies": {
