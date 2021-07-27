@@ -9,7 +9,7 @@
     "bcrypt": "^5.0.0",
     "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
-    "sails": "^1.4.0",
+    "sails": "^1.4.4",
     "sails-hook-orm": "^3.0.1",
     "sails-hook-sockets": "^2.0.0",
     "sails-mongo": "^1.2.0"
